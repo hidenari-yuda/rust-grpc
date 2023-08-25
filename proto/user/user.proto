@@ -8,7 +8,7 @@ service UserService {
 }
 
 message User {
-    int32 id = 1;
+    uint64 id = 1;
     string uuid = 2;
     string created_at = 3;
     string updated_at = 4;
