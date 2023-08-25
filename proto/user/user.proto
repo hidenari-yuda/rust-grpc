@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+    rpc SignUp (SignUpRequest) returns (User);
+    rpc SignIn (SignInRequest) returns (User);
+}
+
+message User {
+    int32 id = 1;
+    string uuid = 2;
+    string created_at = 3;
+    string updated_at = 4;
+    bool is_deleted = 5;
+    string name = 6;
+    string email = 7;
+    string firebase_uid = 8;
+}
+
+message SignUpRequest {
+    string name = 1;
+    string email = 2;
+    string firebase_uid = 3;
+}
+
+message SignInRequest {
+    string firebase_uid = 1;
+}
